@@ -129,12 +129,12 @@ footer {
 
 @media (max-width: 300px) {
   #mySidenav a {
-      font-size: 14px; /* Fonte menor em telas muito pequenas */
-      width: 120px;
+      font-size: 10px; /* Fonte menor em telas muito pequenas */
+      width: 100px;
   }
 
   header h1 {
-      font-size: 1.8rem; /* Título menor */
+      font-size: 1.1rem; /* Título menor */
   }
 
   .btn {
