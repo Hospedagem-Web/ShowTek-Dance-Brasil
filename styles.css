@@ -130,7 +130,7 @@ footer {
 @media (max-width: 300px) {
   #mySidenav a {
       font-size: 14px; /* Fonte menor em telas muito pequenas */
-      width: 170px;
+      width: 120px;
   }
 
   header h1 {
