@@ -30,7 +30,7 @@ header h1 {
 .text-limited {
     font-size: 1.2rem; /* Aumenta o tamanho da fonte para melhor visualização */
     line-height: 1; /* Usa proporção em vez de valores fixos para adaptabilidade */
-    color: #333; /* Substitui #040404 por um cinza suave para reduzir contraste agressivo */
+    color: #000000; /* Substitui #040404 por um cinza suave para reduzir contraste agressivo */
     max-width: 1200px; /* Limita a largura máxima para melhor foco em telas grandes */
     margin: 0 auto; /* Centraliza horizontalmente */
     text-align: justify; /* Mantém o texto bem alinhado para leitura fluida */
@@ -66,11 +66,42 @@ header h1 {
 /* Smartphones */
 @media (max-width: 780px) {
     body {
-        font-size: 10px;
+        font-size: 7px;
         /* Ajuste para leitura confortável */
         padding: 0px;
         height: 30px; /* Altura do cabeçalho */
-        max-height: 340px;
+        max-height: 300px;
+      /* Cabeçalho */
+
+        .header-image {
+          text-align: center;
+          background-color: rgb(0, 0, 0);
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          margin: 10;
+          padding: 0;
+          object-fit:contain;/* Faz a imagem preencher o espaço do cabeçalho */
+        }
+
+      .header-image img {
+        width: 100%;
+        height: max-content;
+        max-height: 30px;
+        object-fit: contain;
+      }
+
+      /* Estilo do cabeçalho */
+      header {
+        background-color: #000000;
+        color: #fff;
+        padding: 0px;
+        margin-bottom: 0px;
+      }
+
+      header h1 {
+        margin: 0;
+      }
     }
     
 }
@@ -101,6 +132,7 @@ header h1 {
     margin: 0;
     padding: 0;
     object-fit:contain;/* Faz a imagem preencher o espaço do cabeçalho */
+    box-shadow: 0px 1px 10px #ffffff;
 }
 
 .header-image img {
@@ -117,7 +149,7 @@ header h1 {
   }
   header {
     background-color: #1d1d1f;
-    box-shadow: 0px 1px 10px #1d1d1f;
+    box-shadow: 0px 1px 10px #000000;
   }
   .nav-bar {
     display: flex;
@@ -165,7 +197,7 @@ header h1 {
   }
   @media screen and (max-width: 720px) {
     .nav-bar {
-      padding: 1.5rem 6rem;
+      padding: 1.5rem 20rem;
       transition: 1s;
       width: 100%; /* Faz com que o nav ocupe toda a largura da tela */
    
@@ -202,7 +234,7 @@ header h1 {
       font-size: 1.25em;
     }
     .menu-mobile .nav-button button {
-      width: 100%;
+      width: 50%;
     }
     .open {
       display: block;
