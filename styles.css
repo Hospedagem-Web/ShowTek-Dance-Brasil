@@ -45,8 +45,14 @@ header h1 {
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card-img-top {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-height: 250px; /* Define uma altura uniforme */
+    object-fit: cover; /* Mantém a proporção adequada sem distorção */
+    border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
 }
 
 /* Botão */
@@ -63,48 +69,122 @@ header h1 {
 .btn:hover {
     background-color: #1c9314;
 }
-/* Smartphones */
+
+
+
+/* MOBILE */
 @media (max-width: 780px) {
-    body {
-        font-size: 7px;
-        /* Ajuste para leitura confortável */
-        padding: 0px;
-        height: 30px; /* Altura do cabeçalho */
-        max-height: 300px;
-      /* Cabeçalho */
-
-        .header-image {
-          text-align: center;
-          background-color: rgb(0, 0, 0);
-          width: 100%;
-          height: 200px;
-          overflow: hidden;
-          margin: 10;
-          padding: 0;
-          object-fit:contain;/* Faz a imagem preencher o espaço do cabeçalho */
-        }
-
-      .header-image img {
+    body, html {
+        font-size: 14px; /* Ajuste para leitura confortável */
+        padding: 10px;
+        text-align: center;
+        overflow-x: hidden; /* Remove a barra de rolagem lateral */
         width: 100%;
-        height: max-content;
-        max-height: 30px;
-        object-fit: contain;
-      }
-
-      /* Estilo do cabeçalho */
-      header {
-        background-color: #000000;
-        color: #fff;
-        padding: 0px;
-        margin-bottom: 0px;
-      }
-
-      header h1 {
-        margin: 0;
-      }
     }
-    
+
+    /* Garantir que nenhum elemento ultrapasse a largura */
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    /* Redimensionando imagens do cabeçalho */
+    .header-image {
+        width: 100%;
+        height: auto; /* Mantém proporção correta */
+        max-height: 200px;
+        object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
+    }
+
+    /* Cards lado a lado para telas menores */
+    .d-flex {
+        flex-direction: column; /* Empilha os elementos em telas pequenas */
+        align-items: center;
+    }
+
+    /* Ajustando imagens do carrossel */
+    .carousel img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Ajustando botões para mobile */
+        .nav-bar {
+        flex-direction: column; /* Empilha os itens */
+        align-items: center; /* Centraliza os elementos */
+        padding: 1rem; /* Ajusta o espaçamento */
+    }
+
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position:relative; /* Fixa o menu no topo */
+        top: 0;
+        left: 0;
+        background-color: #1d1d1f;
+        padding: 10px 0;
+        z-index: 1000; /* Garante que fique sobre outros elementos */
+    }
+
+    .menu-mobile ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        position: relative;
+    }
+
+    .menu-mobile .list-item {
+        padding: 0px 0;
+    }
+
+    .menu-mobile-icon {
+        display: block;
+        position: absolute;
+        top: 215px;
+        right: 30px;
+    }
+        .menu-mobile .list-link {
+        font-size: 15px; /* Ajusta o tamanho da fonte para melhor visibilidade */
+        display: block; /* Garante que ocupem toda a largura */
+        width: 100%; /* Ajusta a largura para manter proporção */
+        text-align: center; /* Centraliza o texto */
+        border-radius: 8px; /* Bordas arredondadas para um visual mais moderno */
+
+        color: #fff; /* Cor do texto */
+        text-decoration: none; /* Remove sublinhado */
+    }
+
+    .menu-mobile .list-link:hover {
+        background-color: #ec8c06; /* Cor ao passar o mouse */
+    }
+    .card {
+        max-width: 100px; /* Define um tamanho fixo para os cards */
+        min-height: 50px; /* Mantém uma altura uniforme */
+        margin: 5px auto; /* Centraliza os cards */
+        padding: 10px; /* Ajuste interno */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Mantém os conteúdos alinhados */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+      /* Garantir que imagens também fiquem no mesmo tamanho */
+      .card-img-top {
+        width: 100%;
+        height: 110px; /* Mantém todas as imagens com a mesma altura */
+        object-fit: cover; /* Ajusta a imagem sem distorção */
+    }
+
+    .card-body {
+        padding: 10px;
+    }
 }
+
 
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -121,6 +201,12 @@ header h1 {
         padding: 0px;
     }
 }
+    .header-image {
+        width: 100%;
+        height: auto; /* Mantém proporção correta */
+        max-height: 200px;
+        object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
+    }
 
 /* Cabeçalho */
 .header-image {
@@ -141,6 +227,14 @@ header h1 {
     max-height: 340px;
     object-fit: contain;
 }
+.carousel img {
+    width:auto; /* Faz com que as imagens ocupem toda a largura disponível */
+    max-width: 500px; /* Define um tamanho máximo para evitar imagens exageradamente grandes */
+    height: 700px; /* Ajusta a altura */
+    object-fit: cover; /* Mantém o formato adequado sem distorção */
+    margin: auto; /* Centraliza a imagem */
+}
+
 /*/////////////////////////////////////////////////////*/
 * {
     padding: 0;
@@ -181,9 +275,11 @@ header h1 {
   .nav-button button {
     border: none;
     background-color: rgb(255, 145, 0);
-    padding: 10px 25px;
     border-radius: 5px;
     font-size: 2em;
+    width: 90%; /* Reduz a largura para melhor encaixe */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    padding: 10px 15px; /* Menor espaçamento interno */
   }
   .nav-button button a {
     color: #fff;
